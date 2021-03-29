@@ -58,9 +58,11 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
-    const addSum = a+b+c;
-    const multSum = a*b*c;
-    const reqArray = [addSum, multSum, `${a} and ${b} and ${c} sum to ${addSum}.`, `The product of ${a} and ${b} and ${c} is ${multSum}.`];
+    const add = sum(a, b);
+    const addSum = sum(add[0], c);
+    const mult = multiply(a, b);
+    const multSum = multiply(mult[0], c);
+    const reqArray = [addSum[0], multSum[0], `${a} and ${b} and ${c} sum to ${addSum[0]}.`, `The product of ${a} and ${b} and ${c} is ${multSum[0]}.`];
     return reqArray;
 }
 
@@ -81,6 +83,8 @@ To do addition, use your sum() function that you've already created. You're goin
 have to be resourceful to figure out how to do this. However, you may continue 
 to use the + operator for string concatenation.
 */
+// const sampleArray[a, b, c];
+
 
 export function sumArrayWithThreeNumbers(sumArr) {
     const firstAdd = sum(sumArr[0], sumArr[1]);
